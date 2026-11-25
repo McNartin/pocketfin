@@ -151,6 +151,7 @@ void platform_picker_end(void) {}
 /* No idle timer to hold off: a desktop does not suspend under a window that
    is drawing. */
 void platform_activity_tick(void) {}
+void platform_keep_awake(void) {}
 
 /* --- the keyboard (see platform.h) ----------------------------------------
  * No on-screen keyboard here: the console window types for it, when there is

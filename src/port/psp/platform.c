@@ -491,6 +491,7 @@ platform_picker_result platform_picker_step(void) {
 }
 
 void platform_activity_tick(void) { scePowerTick(0); }
+void platform_keep_awake(void) { scePowerTick(PSP_POWER_TICK_SUSPEND); }
 
 /* --- the on-screen keyboard (see platform.h) ------------------------------ */
 
