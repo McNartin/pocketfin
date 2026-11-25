@@ -8,6 +8,28 @@ A [Jellyfin](https://jellyfin.org) client for the PlayStation Portable.
 
 Watch the movies and shows from your Jellyfin server on your PSP.
 
+## This fork
+
+A fork of [CidVonHighwind/pocketfin](https://github.com/CidVonHighwind/pocketfin)
+that adds:
+
+- **Sign in from the app.** A login page asks for the server (an IP address or
+  a name), the port and HTTPS, then signs in with **Quick Connect** (approve a
+  code from a signed-in Jellyfin app) or a user name and password on the
+  console's keyboard. Only the session token is kept (`account.txt`), never the
+  password. Settings > Sign out ends it. An existing `jellyfin.txt` still works.
+- **HTTPS and server names**, so a server behind a reverse proxy can be reached
+  over the internet. TLS 1.2 through mbedTLS, with the first handshake's session
+  resumed by every later connection (about 13 ms instead of 1.7 s on a PSP-3000).
+- **Music.** Albums, artists and songs, played on a worker of their own so music
+  carries on while browsing; a Now Playing screen with album art, a
+  player-style transport, and a dim screen for listening (L/R skip, triangle
+  dims, square stops, SELECT returns to it).
+- **Smooth video.** The Media Engine hands back three pictures at each segment's
+  keyframe; they were overwritten, which dropped two frames and stalled the
+  picture once a second. They are now kept and shown in order, and pictures are
+  paced to the nearest refresh by a clock smoothed against the sound's jitter.
+
 ## What you need
 
 - A PSP running custom firmware, with a Memory Stick
