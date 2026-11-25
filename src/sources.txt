@@ -50,6 +50,7 @@ src/model/posters.c
 src/model/fmp4.c
 src/model/play_clock.c
 src/model/stream.c
+src/model/music.c
 
 
 # The toolkit. Takes a rectangle; owns no application state.
@@ -85,6 +86,7 @@ src/page/home.c
 src/page/network.c
 src/page/keys.c
 src/page/login.c
+src/page/nowplaying.c
 src/page/player.c
 
 
@@ -151,6 +153,7 @@ tests/model/test_catalog.c
 tests/model/test_report.c
 tests/model/test_play_clock.c
 tests/model/test_fmp4.c
+tests/model/test_music.c
 tests/model/test_chain.c
 tests/port/test_decode.c
 tests/port/test_compose.c
